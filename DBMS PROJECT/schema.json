@@ -1,0 +1,21 @@
+{
+  "database": "agrismart",
+  "collections": {
+    "users": {
+      "description": "Stores registered users of AgriSmart platform",
+      "fields": {
+        "_id": "ObjectId (auto-generated)",
+        "fullname": "String (required)",
+        "email": "String (unique, required)",
+        "username": "String (unique, required)",
+        "password": "String (bcrypt hashed, required)",
+        "created_at": "Datetime (auto)",
+        "last_login": "Datetime (optional)"
+      },
+      "indexes": [
+        { "email": 1, "unique": true },
+        { "username": 1, "unique": true }
+      ]
+    }
+  }
+}

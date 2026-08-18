@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pest & Disease Alerts - AgriSmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="crop-recommendation.html" class="nav-link">Crop Advisor</a></li>
+                    <!-- <li class="nav-item"><a href="water-management.html" class="nav-link">Water Management</a></li>
+                    <li class="nav-item"><a href="fertilizer.html" class="nav-link">Fertilizer Guide</a></li> -->
+                    <li class="nav-item"><a href="pest-alerts.html" class="nav-link active">Pest Alerts</a></li>
+                    <li class="nav-item"><a href="market-trends.html" class="nav-link">Market Insights</a></li>
+                    <li class="nav-item"><a href="urban-gardening.html" class="nav-link">Urban Gardening</a></li>
+                </ul>
+                
+                <!-- <div class="nav-actions">
+                    <button class="btn btn-login">Login</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div> -->
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Pest & Disease Alerts</h1>
+                <p>Early warning system for potential threats with preventive measures</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alert Banner -->
+ <!-- Dynamic Alert Banner 
+    <section class="alert-banner" id="dynamic-alert-banner" style="display: none;">
+        <div class="container">
+            <div class="alert-content">
+                <div class="alert-icon">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="alert-text">
+                    <h3 id="alert-title">High Alert: Rice Blast Risk</h3>
+                    <p id="alert-description">Current weather conditions favor fungal growth in rice crops. Monitor your fields closely.</p>
+                </div>
+                <button class="btn-alert" onclick="viewAlertDetails()">View Details</button>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Input Form -->
+                <div class="form-section">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="fas fa-bug"></i>
+                            </div>
+                            <h2>Pest Risk Assessment</h2>
+                            <p>Enter your crop details to check for potential pest and disease risks</p>
+                        </div>
+                        
+                        <form id="pest-alert-form" class="smart-form">
+                            <div class="form-group">
+                                <label for="location">Farm Location</label>
+                                <select id="location" name="location" required>
+                                    <option value="">Select your region</option>
+                                    <option value="north">North India</option>
+                                    <option value="south">South India</option>
+                                    <option value="east">East India</option>
+                                    <option value="west">West India</option>
+                                    <option value="central">Central India</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="crop-type">Crop Type</label>
+                                <select id="crop-type" name="crop-type" required>
+                                    <option value="">Select crop type</option>
+                                    <option value="rice">Rice</option>
+                                    <option value="wheat">Wheat</option>
+                                    <option value="maize">Maize</option>
+                                    <option value="cotton">Cotton</option>
+                                    <option value="sugarcane">Sugarcane</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="fruits">Fruits</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="growth-stage">Growth Stage</label>
+                                <select id="growth-stage" name="growth-stage" required>
+                                    <option value="">Select growth stage</option>
+                                    <option value="germination">Germination</option>
+                                    <option value="seedling">Seedling</option>
+                                    <option value="vegetative">Vegetative</option>
+                                    <option value="flowering">Flowering</option>
+                                    <option value="fruiting">Fruiting</option>
+                                    <option value="maturity">Maturity</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="weather">Current Weather</label>
+                                <select id="weather" name="weather" required>
+                                    <option value="">Select weather condition</option>
+                                    <option value="hot-humid">Hot & Humid</option>
+                                    <option value="hot-dry">Hot & Dry</option>
+                                    <option value="cool-humid">Cool & Humid</option>
+                                    <option value="cool-dry">Cool & Dry</option>
+                                    <option value="rainy">Rainy</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="temperature">Temperature (°C)</label>
+                                <input type="number" id="temperature" name="temperature" placeholder="Enter current temperature" required min="0" max="50">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="humidity">Humidity (%)</label>
+                                <input type="number" id="humidity" name="humidity" placeholder="Enter humidity level" required min="0" max="100">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="recent-rainfall">Recent Rainfall (mm)</label>
+                                <input type="number" id="recent-rainfall" name="recent-rainfall" placeholder="Enter rainfall in last 7 days" min="0">
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-search"></i>
+                                Check Pest Risks
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Quick Actions -->
+                 <div class="quick-actions">
+    <h3>Quick Actions</h3>
+    <div class="action-buttons">
+        <button class="btn-action" onclick="reportRealPest()">
+            <i class="fas fa-flag"></i>
+            Report Real Pest Sighting
+        </button>
+        <button class="btn-action" onclick="viewRealAlerts()">
+            <i class="fas fa-bell"></i>
+            View Current Alerts
+        </button>
+        <button class="btn-action" onclick="downloadRealGuide()">
+            <i class="fas fa-download"></i>
+            Agricultural Advisory
+        </button>
+    </div>
+</div>
+
+</div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+    <div class="results-card">
+        <div class="results-header">
+            <h2>Risk Assessment</h2>
+            <p>Potential threats and preventive measures for your crops</p>
+        </div>
+        
+        <div id="pest-results" class="results-container">
+            <div class="empty-state">
+                <div class="empty-icon">
+                    <i class="fas fa-bug"></i>
+                </div>
+                <h3>Check Pest Risks</h3>
+                <p>Fill out the form to assess potential pest and disease threats</p>
+            </div>
+        </div>
+    </div>
+
+                    <!-- Common Pests 
+   <div class="common-pests">
+        <h3>Common Pests in Your Region</h3>
+        <div class="pest-grid">
+            <div class="pest-card high-risk">
+                <div class="pest-header">
+                    <h4>Rice Blast</h4>
+                    <span class="risk-badge high">High Risk</span>
+                </div>
+                <p>Fungal disease affecting leaves and panicles</p>
+                <div class="pest-details">
+                    <span><i class="fas fa-temperature-high"></i> 25-30°C</span>
+                    <span><i class="fas fa-tint"></i> High Humidity</span>
+                </div>
+            </div>
+            <div class="pest-card medium-risk">
+                <div class="pest-header">
+                    <h4>Wheat Rust</h4>
+                    <span class="risk-badge medium">Medium Risk</span>
+                </div>
+                <p>Fungal disease causing orange-brown pustules</p>
+                <div class="pest-details">
+                    <span><i class="fas fa-temperature-low"></i> 15-25°C</span>
+                    <span><i class="fas fa-tint"></i> High Humidity</span>
+                </div>
+            </div>
+            <div class="pest-card low-risk">
+                <div class="pest-header">
+                    <h4>Cotton Bollworm</h4>
+                    <span class="risk-badge low">Low Risk</span>
+                </div>
+                <p>Larvae that feed on cotton bolls</p>
+                <div class="pest-details">
+                    <span><i class="fas fa-temperature-high"></i> 25-35°C</span>
+                    <span><i class="fas fa-wind"></i> Dry Conditions</span>
+                </div>
+            </div>
+        </div>
+    </div>-->
+</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSmart</span>
+                    </div>
+                    <p>Revolutionizing agriculture through technology and data-driven insights for sustainable farming.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-recommendation.html">Crop Advisor</a></li>
+                        <li><a href="water-management.html">Water Management</a></li>
+                        <li><a href="fertilizer.html">Fertilizer Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="pest-alerts.html">Pest Alerts</a></li>
+                        <li><a href="market-trends.html">Market Insights</a></li>
+                        <li><a href="urban-gardening.html">Urban Gardening</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@agrismart.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriSmart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <!-- In pest-alerts.html, update the script tag -->
+    <script src="scripts/pest-alerts.js"></script>
+
+</body>
+</html>

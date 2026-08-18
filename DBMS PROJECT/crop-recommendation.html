@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Crop Advisor - AgriSmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="crop-recommendation.html" class="nav-link active">Crop Advisor</a></li>
+                    <!-- <li class="nav-item"><a href="water-management.html" class="nav-link">Water Management</a></li> -->
+                    <!-- <li class="nav-item"><a href="fertilizer.html" class="nav-link">Fertilizer Guide</a></li> -->
+                    <li class="nav-item"><a href="pest-alerts.html" class="nav-link">Pest Alerts</a></li>
+                    <li class="nav-item"><a href="market-trends.html" class="nav-link">Market Insights</a></li>
+                    <li class="nav-item"><a href="urban-gardening.html" class="nav-link">Urban Gardening</a></li>
+                </ul>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Intelligent Crop Advisor</h1>
+                <p>Get AI-powered crop recommendations based on soil nutrients and climate conditions</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Input Form -->
+                <div class="form-section">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="fas fa-seedling"></i>
+                            </div>
+                            <h2>Enter Soil & Climate Data</h2>
+                            <p>Provide soil nutrient levels and climate conditions for AI recommendations</p>
+                        </div>
+                        
+                        <form id="crop-recommendation-form" class="smart-form">
+                            <div class="nutrient-section">
+                                <h3>Soil Nutrient Levels (ppm)</h3>
+                                
+                                <div class="form-group">
+                                    <label for="nitrogen">Nitrogen (N) Level: <span id="nitrogen-value">80</span> ppm</label>
+                                    <input type="range" id="nitrogen" name="nitrogen" min="0" max="140" value="80" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low (0)</span>
+                                        <span>Medium (70)</span>
+                                        <span>High (140)</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phosphorus">Phosphorus (P) Level: <span id="phosphorus-value">50</span> ppm</label>
+                                    <input type="range" id="phosphorus" name="phosphorus" min="0" max="145" value="50" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low (0)</span>
+                                        <span>Medium (70)</span>
+                                        <span>High (145)</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="potassium">Potassium (K) Level: <span id="potassium-value">40</span> ppm</label>
+                                    <input type="range" id="potassium" name="potassium" min="0" max="205" value="40" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low (0)</span>
+                                        <span>Medium (100)</span>
+                                        <span>High (205)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="temperature">Temperature: <span id="temperature-value">25</span> °C</label>
+                                <input type="range" id="temperature" name="temperature" min="0" max="50" value="25" class="range-slider">
+                                <div class="range-labels">
+                                    <span>Cool (0°C)</span>
+                                    <span>Moderate (25°C)</span>
+                                    <span>Hot (50°C)</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="humidity">Humidity: <span id="humidity-value">75</span> %</label>
+                                <input type="range" id="humidity" name="humidity" min="0" max="100" value="75" class="range-slider">
+                                <div class="range-labels">
+                                    <span>Dry (0%)</span>
+                                    <span>Moderate (50%)</span>
+                                    <span>Humid (100%)</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="ph-level">Soil pH Level: <span id="ph-value">6.5</span></label>
+                                <input type="range" id="ph-level" name="ph-level" min="3" max="10" step="0.1" value="6.5" class="range-slider">
+                                <div class="range-labels">
+                                    <span>Acidic (3.0)</span>
+                                    <span>Neutral (6.5)</span>
+                                    <span>Alkaline (10.0)</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="rainfall">Rainfall: <span id="rainfall-value">200</span> mm</label>
+                                <input type="range" id="rainfall" name="rainfall" min="0" max="300" value="200" class="range-slider">
+                                <div class="range-labels">
+                                    <span>Low (0mm)</span>
+                                    <span>Medium (150mm)</span>
+                                    <span>High (300mm)</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-brain"></i>
+                                Get AI Recommendations
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Quick Tips -->
+                    <div class="quick-tips">
+                        <h3>Soil Testing Tips</h3>
+                        <div class="tip-cards">
+                            <div class="tip-card">
+                                <i class="fas fa-flask"></i>
+                                <h4>Soil Testing</h4>
+                                <p>Get professional soil testing for accurate nutrient levels</p>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-cloud-sun"></i>
+                                <h4>Climate Data</h4>
+                                <p>Use local weather station data for accurate inputs</p>
+                            </div>
+                            <div class="tip-card">
+                                <i class="fas fa-calendar"></i>
+                                <h4>Seasonal Planning</h4>
+                                <p>Consider seasonal variations in temperature and rainfall</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <div class="results-card">
+                        <div class="results-header">
+                            <h2>Recommended Crops</h2>
+                            <p>Based on your soil analysis and climate conditions</p>
+                        </div>
+                        
+                        <div id="recommendation-results" class="results-container">
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-seedling"></i>
+                                </div>
+                                <h3>Enter Soil Data</h3>
+                                <p>Fill out the form to get personalized crop recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Additional Info 
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h4>Market Demand</h4>
+                            <p>Current high-demand crops in your region with premium pricing</p>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon">
+                                <i class="fas fa-cloud-sun"></i>
+                            </div>
+                            <h4>Weather Outlook</h4>
+                            <p>Optimal planting times based on seasonal forecasts</p>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSmart</span>
+                    </div>
+                    <p>Revolutionizing agriculture through technology and data-driven insights for sustainable farming.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-recommendation.html">Crop Advisor</a></li>
+                        <li><a href="water-management.html">Water Management</a></li>
+                        <li><a href="fertilizer.html">Fertilizer Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="pest-alerts.html">Pest Alerts</a></li>
+                        <li><a href="market-trends.html">Market Insights</a></li>
+                        <li><a href="urban-gardening.html">Urban Gardening</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@agrismart.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriSmart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/crop-recommendation.js"></script>
+</body>
+</html>

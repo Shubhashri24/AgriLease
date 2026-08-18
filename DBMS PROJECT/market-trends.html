@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Intelligence - AgriSmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="crop-recommendation.html" class="nav-link">Crop Advisor</a></li>
+                    <!-- <li class="nav-item"><a href="water-management.html" class="nav-link">Water Management</a></li>
+                    <li class="nav-item"><a href="fertilizer.html" class="nav-link">Fertilizer Guide</a></li> -->
+                    <li class="nav-item"><a href="pest-alerts.html" class="nav-link">Pest Alerts</a></li>
+                    <li class="nav-item"><a href="market-trends.html" class="nav-link active">Market Insights</a></li>
+                    <li class="nav-item"><a href="urban-gardening.html" class="nav-link">Urban Gardening</a></li>
+                </ul>
+                
+                <!-- <div class="nav-actions">
+                    <button class="btn btn-login">Login</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div> -->
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Market Intelligence</h1>
+                <p>Data-driven insights on crop demand, pricing trends, and profitable opportunities</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Overview -->
+    <section class="market-overview">
+        <div class="container">
+            <div class="overview-cards">
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Price Trends</h3>
+                        <p class="trend up">+12% this month</p>
+                        <span>Wheat and Rice showing strong growth</span>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Demand Index</h3>
+                        <p class="trend up">High</p>
+                        <span>Organic products in high demand</span>
+                    </div>
+                </div>
+                <div class="overview-card">
+                    <div class="overview-icon">
+                        <i class="fas fa-calendar"></i>
+                    </div>
+                    <div class="overview-content">
+                        <h3>Seasonal Outlook</h3>
+                        <p class="trend stable">Stable</p>
+                        <span>Good conditions for Rabi crops</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Input Form -->
+                <div class="form-section">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="fas fa-chart-bar"></i>
+                            </div>
+                            <h2>Market Analysis</h2>
+                            <p>Get personalized market insights for your farming business</p>
+                        </div>
+                        
+                        <form id="market-trends-form" class="smart-form">
+                            <div class="form-group">
+                                <label for="location">Region</label>
+                                <select id="location" name="location" required>
+                                    <option value="">Select your region</option>
+                                    <option value="north">North India</option>
+                                    <option value="south">South India</option>
+                                    <option value="east">East India</option>
+                                    <option value="west">West India</option>
+                                    <option value="central">Central India</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="season">Season</label>
+                                <select id="season" name="season" required>
+                                    <option value="">Select season</option>
+                                    <option value="kharif">Kharif (June-October)</option>
+                                    <option value="rabi">Rabi (November-April)</option>
+                                    <option value="zaid">Zaid (March-June)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="crop-interest">Crop Interest</label>
+                                <select id="crop-interest" name="crop-interest" required>
+                                    <option value="">Select crops of interest</option>
+                                    <option value="cereals">Cereals (Rice, Wheat, Maize)</option>
+                                    <option value="pulses">Pulses</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="fruits">Fruits</option>
+                                    <option value="cash-crops">Cash Crops (Cotton, Sugarcane)</option>
+                                    <option value="all">All Crops</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="market-type">Market Type</label>
+                                <select id="market-type" name="market-type" required>
+                                    <option value="">Select market type</option>
+                                    <option value="local">Local Market</option>
+                                    <option value="regional">Regional Market</option>
+                                    <option value="national">National Market</option>
+                                    <option value="export">Export Market</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="investment">Investment Capacity</label>
+                                <select id="investment" name="investment" required>
+                                    <option value="">Select investment capacity</option>
+                                    <option value="low">Low (₹10,000 - ₹50,000)</option>
+                                    <option value="medium">Medium (₹50,000 - ₹2,00,000)</option>
+                                    <option value="high">High (Above ₹2,00,000)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-chart-pie"></i>
+                                Analyze Market Trends
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Live Market Data -->
+                    <div class="live-data">
+                        <h3>Live Market Prices</h3>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="crop-name">Wheat</span>
+                                <span class="crop-price">₹2,100/qtl</span>
+                                <span class="price-change up">+5%</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="crop-name">Rice</span>
+                                <span class="crop-price">₹3,200/qtl</span>
+                                <span class="price-change up">+3%</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="crop-name">Tomato</span>
+                                <span class="crop-price">₹40/kg</span>
+                                <span class="price-change down">-8%</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="crop-name">Cotton</span>
+                                <span class="crop-price">₹6,500/qtl</span>
+                                <span class="price-change stable">0%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <div class="results-card">
+                        <div class="results-header">
+                            <h2>Market Recommendations</h2>
+                            <p>High-demand crops and profitable opportunities</p>
+                        </div>
+                        
+                        <div id="market-results" class="results-container">
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-chart-line"></i>
+                                </div>
+                                <h3>Analyze Market</h3>
+                                <p>Fill out the form to get personalized market insights</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Trending Crops
+                    <div class="trending-crops">
+                        <h3>Currently Trending</h3>
+                        <div class="trend-grid">
+                            <div class="trend-card">
+                                <div class="trend-header">
+                                    <h4>Organic Products</h4>
+                                    <span class="trend-badge up">+25%</span>
+                                </div>
+                                <p>Growing demand for organic fruits and vegetables with premium pricing</p>
+                                <div class="trend-stats">
+                                    <span>Premium: 25-40%</span>
+                                    <span>Demand: High</span>
+                                </div>
+                            </div>
+                            <div class="trend-card">
+                                <div class="trend-header">
+                                    <h4>Medicinal Plants</h4>
+                                    <span class="trend-badge up">+18%</span>
+                                </div>
+                                <p>Increased demand for tulsi, ashwagandha, and other medicinal plants</p>
+                                <div class="trend-stats">
+                                    <span>Premium: 30-50%</span>
+                                    <span>Demand: Medium</span>
+                                </div>
+                            </div>
+                            <div class="trend-card">
+                                <div class="trend-header">
+                                    <h4>Exotic Vegetables</h4>
+                                    <span class="trend-badge up">+12%</span>
+                                </div>
+                                <p>Broccoli, kale, and avocado seeing steady growth in urban markets</p>
+                                <div class="trend-stats">
+                                    <span>Premium: 20-35%</span>
+                                    <span>Demand: Growing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSmart</span>
+                    </div>
+                    <p>Revolutionizing agriculture through technology and data-driven insights for sustainable farming.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-recommendation.html">Crop Advisor</a></li>
+                        <li><a href="water-management.html">Water Management</a></li>
+                        <li><a href="fertilizer.html">Fertilizer Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="pest-alerts.html">Pest Alerts</a></li>
+                        <li><a href="market-trends.html">Market Insights</a></li>
+                        <li><a href="urban-gardening.html">Urban Gardening</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@agrismart.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriSmart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/market-trends.js"></script>
+</body>
+</html>

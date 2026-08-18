@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart - Smart Farming Solutions</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="pest-alerts-page">
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="crop-recommendation.html" class="nav-link">Crop Advisor</a></li>
+                    <!-- <li class="nav-item"><a href="water-management.html" class="nav-link">Water Management</a></li> -->
+                    <!-- <li class="nav-item"><a href="fertilizer.html" class="nav-link">Fertilizer Guide</a></li> -->
+                    <li class="nav-item"><a href="pest-alerts.html" class="nav-link">Pest Alerts</a></li>
+                    <li class="nav-item"><a href="market-trends.html" class="nav-link">Market Insights</a></li>
+                    <li class="nav-item"><a href="urban-gardening.html" class="nav-link">Urban Gardening</a></li>
+                </ul>
+                
+                <!-- Removed Login/Signup Buttons -->
+                <div class="nav-buttons">
+                <a href="login.html" class="btn-login-nav">Login</a>
+                <a href="register.html" class="btn-signup-nav">Sign Up</a>
+                </div>
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Smart Farming <span>Revolution</span></h1>
+                    <p>Harness the power of AI and data analytics to maximize your agricultural productivity and sustainability</p>
+                    <div class="hero-buttons">
+                        <a href="#features" class="btn-primary">Explore Features</a>
+                        <a href="crop-recommendation.html" class="btn-secondary">Get Started <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="visual-container">
+                        <div class="main-visual">
+                            <div class="farm-icon">
+                                <i class="fas fa-tractor"></i>
+                            </div>
+                        </div>
+                        <div class="floating-card card-1">
+                            <i class="fas fa-leaf"></i>
+                            <p>Crop Health</p>
+                        </div>
+                        <div class="floating-card card-2">
+                            <i class="fas fa-tint"></i>
+                            <p>Water Optimization</p>
+                        </div>
+                        <div class="floating-card card-3">
+                            <i class="fas fa-chart-line"></i>
+                            <p>Market Insights</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section 
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-tractor"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="12500">0</h3>
+                    <p class="stat-label">Farmers Empowered</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-cloud-sun"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="98">0</h3>
+                    <p class="stat-label">Accuracy Rate</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-hand-holding-water"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="40">0</h3>
+                    <p class="stat-label">Water Saved (%)</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-rupee-sign"></i>
+                    </div>
+                    <h3 class="stat-number" data-target="35">0</h3>
+                    <p class="stat-label">Income Increased (%)</p>
+                </div>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Smart Farming Solutions</h2>
+                <p>Comprehensive tools to optimize every aspect of your farming operations</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Intelligent Crop Advisor</h3>
+                    <p>Get AI-powered crop recommendations based on soil type, weather patterns, and market demand</p>
+                    <a href="crop-recommendation.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <!--<div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Precision Water Management</h3>
+                    <p>Optimize irrigation schedules with real-time soil moisture data and weather forecasts</p>
+                    <a href="water-management.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Smart Fertilizer Guide</h3>
+                    <p>Precise nutrient recommendations based on soil analysis and crop requirements</p>
+                    <a href="fertilizer.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>-->
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bug"></i>
+                    </div>
+                    <h3>Pest & Disease Alerts</h3>
+                    <p>Early warning system for potential threats with preventive measures</p>
+                    <a href="pest-alerts.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Market Intelligence</h3>
+                    <p>Data-driven insights on crop demand, pricing trends, and profitable opportunities</p>
+                    <a href="market-trends.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h3>Urban Gardening Assistant</h3>
+                    <p>Expert guidance for home gardening, from plant selection to care instructions</p>
+                    <a href="urban-gardening.html" class="feature-link">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How It Works</h2>
+                <p>Simple steps to transform your farming with technology</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Input Your Data</h3>
+                        <p>Enter details about your farm location, soil type, and current crops</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Analysis</h3>
+                        <p>Our system analyzes data using machine learning algorithms</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Recommendations</h3>
+                        <p>Receive personalized advice for crops, water, and nutrients</p>
+                    </div>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Implement & Monitor</h3>
+                        <p>Apply recommendations and track results with our monitoring tools</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section 
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>Success Stories</h2>
+                <p>Hear from farmers who transformed their operations with our platform</p>
+            </div>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <p>"This system helped me increase my crop yield by 35% while reducing water usage. The market insights allowed me to grow the most profitable crops."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Rajesh Kumar</h4>
+                            <p>Punjab, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"The pest alert system saved my entire tomato crop from blight. I received warnings two weeks before any visible symptoms appeared."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Priya Sharma</h4>
+                            <p>Maharashtra, India</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <p>"As an urban gardener, the plant recommendations for my balcony have been spot on. I'm now growing fresh herbs and vegetables all year round."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div>
+                            <h4>Anita Patel</h4>
+                            <p>Bangalore, India</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonial-nav">
+                <button class="nav-btn active" data-slide="0"></button>
+                <button class="nav-btn" data-slide="1"></button>
+                <button class="nav-btn" data-slide="2"></button>
+            </div>
+        </div>
+    </section>-->
+
+    <!-- CTA Section 
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Transform Your Farming?</h2>
+                <p>Join thousands of farmers who are already using our platform to increase yields and profits</p>
+                <div class="cta-buttons">
+                    <a href="crop-recommendation.html" class="btn-primary">Start Now</a>
+                    <a href="#features" class="btn-secondary">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSmart</span>
+                    </div>
+                    <p>Revolutionizing agriculture through technology and data-driven insights for sustainable farming.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-recommendation.html">Crop Advisor</a></li>
+                        <li><a href="water-management.html">Water Management</a></li>
+                        <li><a href="fertilizer.html">Fertilizer Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="pest-alerts.html">Pest Alerts</a></li>
+                        <li><a href="market-trends.html">Market Insights</a></li>
+                        <li><a href="urban-gardening.html">Urban Gardening</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@agrismart.com</li>
+                        <li><i class="fas fa-phone"></i> +91 8080068399</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Pune, Maharashtra</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriSmart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/animations.js"></script>
+        <script>
+    // Check if user is logged in
+    document.addEventListener('DOMContentLoaded', function() {
+        const user = localStorage.getItem('agrismart_user');
+        const navButtons = document.querySelector('.nav-buttons');
+        
+        if (user) {
+            const userData = JSON.parse(user);
+            // Replace login/signup buttons with user info
+            if (navButtons) {
+                navButtons.innerHTML = `
+                    <div class="user-info">
+                        <span>Welcome, ${userData.username}</span>
+                        <button id="logout-btn" class="btn-logout">Logout</button>
+                    </div>
+                `;
+                
+                // Add logout functionality
+                document.getElementById('logout-btn').addEventListener('click', function() {
+                    localStorage.removeItem('agrismart_user');
+                    window.location.reload();
+                });
+            }
+        }
+    });
+    </script>
+</body>
+</html>

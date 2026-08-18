@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriSmart - Login to Your Account</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --primary-light: #4caf50;
+            --accent: #ff9800;
+            --accent-light: #ffb74d;
+            --purple: #9c27b0;
+            --blue: #2196f3;
+            --pink: #e91e63;
+            --text: #333;
+            --text-light: #666;
+            --white: #ffffff;
+            --shadow: 0 15px 50px rgba(0, 0, 0, 0.2);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(135deg, #1a5319 0%, #2e7d32 30%, #4caf50 60%, #8bc34a 100%);
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Enhanced Background Animation */
+        .bg-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .floating-element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float 25s infinite linear;
+        }
+
+        .pulse-circle {
+            position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 8s infinite ease-in-out;
+        }
+
+        .moving-line {
+            position: absolute;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            animation: moveLine 15s infinite linear;
+        }
+
+        .color-burst {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            filter: blur(20px);
+            opacity: 0.3;
+            animation: colorChange 10s infinite alternate;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+            }
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+            50% {
+                transform: scale(1.2);
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes moveLine {
+            0% {
+                transform: translateX(-100%);
+            }
+            100% {
+                transform: translateX(100vw);
+            }
+        }
+
+        @keyframes colorChange {
+            0% {
+                background: rgba(255, 152, 0, 0.3);
+                transform: scale(1);
+            }
+            25% {
+                background: rgba(156, 39, 176, 0.3);
+            }
+            50% {
+                background: rgba(33, 150, 243, 0.3);
+                transform: scale(1.2);
+            }
+            75% {
+                background: rgba(233, 30, 99, 0.3);
+            }
+            100% {
+                background: rgba(76, 175, 80, 0.3);
+                transform: scale(1);
+            }
+        }
+
+        .container {
+            display: flex;
+            max-width: 1000px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            min-height: 600px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: containerEntrance 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.3s forwards;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        @keyframes containerEntrance {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .illustration {
+            flex: 1;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .illustration::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+
+        .illustration-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            transform: translateX(-20px);
+            opacity: 0;
+            animation: slideInLeft 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.5s forwards;
+        }
+
+        @keyframes slideInLeft {
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .logo-icon {
+            font-size: 40px;
+            margin-right: 15px;
+            animation: pulse 3s infinite ease-in-out;
+        }
+
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .illustration h1 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 32px;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.7s forwards;
+        }
+
+        @keyframes slideInUp {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .illustration p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+            opacity: 0.9;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.9s forwards;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        .features li {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            font-size: 14px;
+            transform: translateX(-20px);
+            opacity: 0;
+        }
+
+        .features li:nth-child(1) { animation: slideInLeft 0.5s ease 1.1s forwards; }
+        .features li:nth-child(2) { animation: slideInLeft 0.5s ease 1.3s forwards; }
+        .features li:nth-child(3) { animation: slideInLeft 0.5s ease 1.5s forwards; }
+
+        .features i {
+            margin-right: 10px;
+            background: rgba(255, 255, 255, 0.2);
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: var(--transition);
+        }
+
+        .features li:hover i {
+            background: rgba(255, 255, 255, 0.3);
+            transform: scale(1.1);
+        }
+
+        .form-container {
+            flex: 1;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 40px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275) 1.1s forwards;
+        }
+
+        .form-header h2 {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            color: #2e7d32;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .form-header h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            border-radius: 2px;
+        }
+
+        .form-header p {
+            color: #666;
+            margin-top: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .form-group:nth-child(1) { animation: slideInUp 0.5s ease 1.3s forwards; }
+        .form-group:nth-child(2) { animation: slideInUp 0.5s ease 1.4s forwards; }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #444;
+        }
+
+        .input-with-icon {
+            position: relative;
+        }
+
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #888;
+            transition: var(--transition);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 16px;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: #4caf50;
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
+            outline: none;
+        }
+
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.5s ease 1.5s forwards;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .remember input {
+            margin-right: 8px;
+        }
+
+        .forgot-password {
+            font-size: 14px;
+        }
+
+        .forgot-password a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 16px;
+            background: linear-gradient(135deg, #2e7d32 0%, #4caf50 100%);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-top: 20px;
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            position: relative;
+            overflow: hidden;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.5s ease 1.6s forwards;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(76, 175, 80, 0.4);
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .register-link {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            transform: translateY(20px);
+            opacity: 0;
+            animation: slideInUp 0.5s ease 1.7s forwards;
+        }
+
+        .register-link a {
+            color: #4caf50;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .register-link a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: var(--transition);
+        }
+
+        .register-link a:hover {
+            color: var(--primary-dark);
+        }
+
+        .register-link a:hover::after {
+            width: 100%;
+        }
+
+        .error-message {
+            color: #f44336;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+            animation: shake 0.5s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-5px); }
+            40%, 80% { transform: translateX(5px); }
+        }
+
+        .success-message {
+            color: #4caf50;
+            font-size: 16px;
+            margin-top: 15px;
+            display: none;
+            text-align: center;
+            padding: 15px;
+            background: rgba(76, 175, 80, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+            animation: slideInRight 0.5s ease;
+        }
+
+        @keyframes slideInRight {
+            from {
+                transform: translateX(20px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        /* Responsive design */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                max-width: 500px;
+            }
+            
+            .illustration {
+                padding: 30px;
+            }
+            
+            .form-container {
+                padding: 30px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .remember-forgot {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .forgot-password {
+                margin-top: 10px;
+            }
+            
+            .illustration h1 {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Enhanced Background Animation -->
+    <div class="bg-animation" id="bgAnimation"></div>
+
+    <div class="container">
+        <div class="illustration">
+            <div class="illustration-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </div>
+                <h1>Welcome Back to AgriSmart</h1>
+                <p>Access your personalized farming dashboard, crop recommendations, and market insights.</p>
+                
+                <ul class="features">
+                    <li><i class="fas fa-robot"></i> AI-powered crop recommendations</li>
+                    <li><i class="fas fa-bug"></i> Real-time pest & disease alerts</li>
+                    <li><i class="fas fa-chart-line"></i> Market intelligence & pricing trends</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="form-container">
+            <div class="form-header">
+                <h2>Sign In</h2>
+                <p>Access your AgriSmart account</p>
+            </div>
+            
+            <form id="login-form">
+                <div class="form-group">
+                    <label for="username">Username or Email</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="username" class="form-control" placeholder="Enter your username or email" required>
+                    </div>
+                    <div class="error-message" id="username-error"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" class="form-control" placeholder="Enter your password" required>
+                    </div>
+                    <div class="error-message" id="password-error"></div>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember">
+                        <input type="checkbox" id="remember">
+                        <label for="remember">Remember me</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="#">Forgot password?</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-login">Sign In</button>
+                
+                <div class="register-link">
+                    <p>Don't have an account? <a href="register.html">Register Now</a></p>
+                </div>
+                
+                <div class="success-message" id="success-message"></div>
+                <div class="error-message" id="form-error"></div>
+            </form>
+        </div>
+    </div>
+
+<script>
+    // Create enhanced background animation elements
+    function createBackgroundAnimation() {
+        const bgAnimation = document.getElementById('bgAnimation');
+        
+        // Create floating elements
+        for (let i = 0; i < 15; i++) {
+            const element = document.createElement('div');
+            element.className = 'floating-element';
+            
+            // Random size, position and color
+            const size = Math.random() * 60 + 20;
+            element.style.width = `${size}px`;
+            element.style.height = `${size}px`;
+            element.style.left = `${Math.random() * 100}%`;
+            element.style.animationDuration = `${Math.random() * 20 + 15}s`;
+            element.style.animationDelay = `${Math.random() * 5}s`;
+            
+            // Random colors
+            const colors = [
+                'rgba(255, 152, 0, 0.15)', 
+                'rgba(156, 39, 176, 0.1)', 
+                'rgba(33, 150, 243, 0.1)',
+                'rgba(76, 175, 80, 0.1)',
+                'rgba(233, 30, 99, 0.1)'
+            ];
+            element.style.background = colors[Math.floor(Math.random() * colors.length)];
+            
+            bgAnimation.appendChild(element);
+        }
+    }
+
+    // Form validation
+    function validateForm() {
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value;
+        
+        let isValid = true;
+        
+        // Clear previous errors
+        document.querySelectorAll('.error-message').forEach(el => {
+            el.style.display = 'none';
+        });
+        
+        // Validate username/email
+        if (!username) {
+            showError('username-error', 'Username or email is required');
+            isValid = false;
+        }
+        
+        // Validate password
+        if (!password) {
+            showError('password-error', 'Password is required');
+            isValid = false;
+        }
+        
+        return isValid;
+    }
+
+    // Helper functions
+    function showError(elementId, message) {
+        const element = document.getElementById(elementId);
+        element.textContent = message;
+        element.style.display = 'block';
+    }
+
+    function showSuccess(elementId, message) {
+        const element = document.getElementById(elementId);
+        element.textContent = message;
+        element.style.display = 'block';
+    }
+
+    // Form submission - FIXED VERSION
+    document.getElementById('login-form').addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        if (validateForm()) {
+            const submitBtn = document.querySelector('.btn-login');
+            const originalText = submitBtn.textContent;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Signing In...';
+            submitBtn.disabled = true;
+            
+            // Clear previous messages
+            document.getElementById('success-message').style.display = 'none';
+            document.getElementById('form-error').style.display = 'none';
+            
+            // Prepare data for Python backend
+            const formData = {
+                username: document.getElementById('username').value.trim(),
+                password: document.getElementById('password').value
+            };
+
+            console.log('📤 Sending login data to backend:', formData);
+
+            try {
+                // Send to Python Flask backend
+                const response = await fetch('http://127.0.0.1:5000/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                body: JSON.stringify(formData)
+                });
+
+                console.log('📥 Response status:', response.status, response.statusText);
+                
+                const data = await response.json();
+                console.log('✅ Response data:', data);
+                
+                if (data.success) {
+                    showSuccess('success-message', data.message + ' Redirecting...');
+                    
+                    // Store user info in localStorage
+                    localStorage.setItem('agrismart_user', JSON.stringify({
+                        id: data.user_id,
+                        username: data.username,
+                        fullname: data.fullname,
+                        email: data.email
+                    }));
+                    
+                    console.log('🔄 Redirecting to index.html in 2 seconds...');
+                    
+                    // Redirect to index.html after successful login
+                    setTimeout(() => {
+                        console.log('🎯 Now redirecting to index.html');
+                        window.location.href = 'index.html';
+                    }, 2000);
+                } else {
+                    showError('form-error', data.message || 'Login failed');
+                    console.log('❌ Login failed:', data.message);
+                }
+            } catch (error) {
+                console.error('❌ Fetch error:', error);
+                showError('form-error', 'Connection error. Make sure the backend server is running on port 5000.');
+            } finally {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            }
+        }
+    });
+
+    // Add focus effects to form controls
+    document.querySelectorAll('.form-control').forEach(input => {
+        input.addEventListener('focus', function() {
+            this.style.borderColor = '#4caf50';
+            this.style.boxShadow = '0 0 0 3px rgba(76, 175, 80, 0.2)';
+            this.parentElement.querySelector('.input-with-icon i').style.color = '#4caf50';
+        });
+        
+        input.addEventListener('blur', function() {
+            this.style.borderColor = '#e0e0e0';
+            this.style.boxShadow = 'none';
+            this.parentElement.querySelector('.input-with-icon i').style.color = '#888';
+        });
+    });
+
+    // Initialize background animation
+    createBackgroundAnimation();
+
+    // Check if user is already logged in
+    window.addEventListener('load', function() {
+        const user = localStorage.getItem('agrismart_user');
+        if (user) {
+            console.log('👤 User already logged in, redirecting to index.html');
+            window.location.href = 'index.html';
+        }
+        
+        // Test backend connection
+        testBackendConnection();
+    });
+
+    // Test backend connection on page load
+    async function testBackendConnection() {
+        try {
+            const response = await fetch('http://127.0.0.1:5000/health');
+            const data = await response.json();
+            console.log('✅ Backend connection test:', data);
+        } catch (error) {
+            console.error('❌ Backend connection failed:', error);
+            showError('form-error', 'Backend server is not running. Please start the Python server on port 5000.');
+        }
+    }
+</script>
+</body>
+</html>

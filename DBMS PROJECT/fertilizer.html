@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Fertilizer Guide - AgriSmart</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <link rel="stylesheet" href="styles/forms.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <span class="logo-text">AgriSmart</span>
+                </a>
+                
+                <ul class="nav-menu">
+                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+                    <li class="nav-item"><a href="crop-recommendation.html" class="nav-link">Crop Advisor</a></li>
+                    <li class="nav-item"><a href="water-management.html" class="nav-link">Water Management</a></li>
+                    <li class="nav-item"><a href="fertilizer.html" class="nav-link active">Fertilizer Guide</a></li>
+                    <li class="nav-item"><a href="pest-alerts.html" class="nav-link">Pest Alerts</a></li>
+                    <li class="nav-item"><a href="market-trends.html" class="nav-link">Market Insights</a></li>
+                    <li class="nav-item"><a href="urban-gardening.html" class="nav-link">Urban Gardening</a></li>
+                </ul>
+                
+                <!-- <div class="nav-actions">
+                    <button class="btn btn-login">Login</button>
+                    <button class="btn btn-signup">Sign Up</button>
+                </div> -->
+                
+                <div class="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <div class="header-content">
+                <h1>Smart Fertilizer Guide</h1>
+                <p>Precise nutrient recommendations based on soil analysis and crop requirements</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Input Form -->
+                <div class="form-section">
+                    <div class="form-card">
+                        <div class="form-header">
+                            <div class="form-icon">
+                                <i class="fas fa-flask"></i>
+                            </div>
+                            <h2>Soil Nutrient Analysis</h2>
+                            <p>Enter your soil test results for personalized fertilizer recommendations</p>
+                        </div>
+                        
+                        <form id="fertilizer-form" class="smart-form">
+                            <div class="form-group">
+                                <label for="crop-type">Crop Type</label>
+                                <select id="crop-type" name="crop-type" required>
+                                    <option value="">Select crop type</option>
+                                    <option value="rice">Rice</option>
+                                    <option value="wheat">Wheat</option>
+                                    <option value="maize">Maize</option>
+                                    <option value="cotton">Cotton</option>
+                                    <option value="sugarcane">Sugarcane</option>
+                                    <option value="vegetables">Vegetables</option>
+                                    <option value="pulses">Pulses</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="growth-stage">Growth Stage</label>
+                                <select id="growth-stage" name="growth-stage" required>
+                                    <option value="">Select growth stage</option>
+                                    <option value="pre-sowing">Pre-sowing</option>
+                                    <option value="germination">Germination</option>
+                                    <option value="vegetative">Vegetative</option>
+                                    <option value="flowering">Flowering</option>
+                                    <option value="fruiting">Fruiting</option>
+                                    <option value="maturity">Maturity</option>
+                                </select>
+                            </div>
+
+                            <div class="nutrient-section">
+                                <h3>Soil Nutrient Levels</h3>
+                                
+                                <div class="form-group">
+                                    <label for="nitrogen">Nitrogen (N) Level: <span id="nitrogen-value">Medium</span></label>
+                                    <input type="range" id="nitrogen" name="nitrogen" min="1" max="3" value="2" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low</span>
+                                        <span>Medium</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="phosphorus">Phosphorus (P) Level: <span id="phosphorus-value">Medium</span></label>
+                                    <input type="range" id="phosphorus" name="phosphorus" min="1" max="3" value="2" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low</span>
+                                        <span>Medium</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="potassium">Potassium (K) Level: <span id="potassium-value">Medium</span></label>
+                                    <input type="range" id="potassium" name="potassium" min="1" max="3" value="2" class="range-slider">
+                                    <div class="range-labels">
+                                        <span>Low</span>
+                                        <span>Medium</span>
+                                        <span>High</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="soil-ph">Soil pH Level: <span id="ph-value">6.5</span></label>
+                                <input type="range" id="soil-ph" name="soil-ph" min="4" max="9" step="0.1" value="6.5" class="range-slider">
+                                <div class="range-labels">
+                                    <span>Acidic (4.0)</span>
+                                    <span>Neutral (6.5)</span>
+                                    <span>Alkaline (9.0)</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="organic-matter">Organic Matter (%)</label>
+                                <input type="number" id="organic-matter" name="organic-matter" placeholder="Enter organic matter percentage" min="0" max="10" step="0.1">
+                            </div>
+
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-calculator"></i>
+                                Calculate Fertilizer Requirements
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Results Section -->
+                <div class="results-section">
+                    <div class="results-card">
+                        <div class="results-header">
+                            <h2>Fertilizer Recommendations</h2>
+                            <p>Precise nutrient application based on your soil analysis</p>
+                        </div>
+                        
+                        <div id="fertilizer-results" class="results-container">
+                            <div class="empty-state">
+                                <div class="empty-icon">
+                                    <i class="fas fa-flask"></i>
+                                </div>
+                                <h3>Enter Soil Data</h3>
+                                <p>Fill out the form to get personalized fertilizer recommendations</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Nutrient Deficiency Guide -->
+                    <div class="deficiency-guide">
+                        <h3>Nutrient Deficiency Symptoms</h3>
+                        <div class="deficiency-grid">
+                            <div class="deficiency-card nitrogen">
+                                <div class="deficiency-header">
+                                    <i class="fas fa-leaf"></i>
+                                    <h4>Nitrogen Deficiency</h4>
+                                </div>
+                                <ul>
+                                    <li>Yellowing of older leaves</li>
+                                    <li>Stunted growth</li>
+                                    <li>Reduced yield</li>
+                                </ul>
+                            </div>
+                            <div class="deficiency-card phosphorus">
+                                <div class="deficiency-header">
+                                    <i class="fas fa-seedling"></i>
+                                    <h4>Phosphorus Deficiency</h4>
+                                </div>
+                                <ul>
+                                    <li>Purplish discoloration</li>
+                                    <li>Poor root development</li>
+                                    <li>Delayed maturity</li>
+                                </ul>
+                            </div>
+                            <div class="deficiency-card potassium">
+                                <div class="deficiency-header">
+                                    <i class="fas fa-fire"></i>
+                                    <h4>Potassium Deficiency</h4>
+                                </div>
+                                <ul>
+                                    <li>Yellowing at leaf margins</li>
+                                    <li>Weak stems</li>
+                                    <li>Reduced disease resistance</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-seedling"></i>
+                        <span>AgriSmart</span>
+                    </div>
+                    <p>Revolutionizing agriculture through technology and data-driven insights for sustainable farming.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="crop-recommendation.html">Crop Advisor</a></li>
+                        <li><a href="water-management.html">Water Management</a></li>
+                        <li><a href="fertilizer.html">Fertilizer Guide</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="pest-alerts.html">Pest Alerts</a></li>
+                        <li><a href="market-trends.html">Market Insights</a></li>
+                        <li><a href="urban-gardening.html">Urban Gardening</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-envelope"></i> info@agrismart.com</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Hyderabad, India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 AgriSmart. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts/main.js"></script>
+    <script src="scripts/fertilizer.js"></script>
+</body>
+</html>
